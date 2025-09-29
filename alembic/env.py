@@ -6,7 +6,7 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from models.user import User
+from models import User
 from  models.post import Post
 from models.UserFollower import UserFollower
 from models import Base
