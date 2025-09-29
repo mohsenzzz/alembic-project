@@ -6,8 +6,11 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from models.user import Base
-from models.post import Base as BasePost
+from models.user import User
+from  models.post import Post
+from models.UserFollower import UserFollower
+from models import Base
+
 
 
 # this is the Alembic Config object, which provides
@@ -15,9 +18,9 @@ from models.post import Base as BasePost
 config = context.config
 load_dotenv()
 
-database_url = os.getenv("DATABASE_URL")
-if not database_url:
-    raise ValueError("DATABASE_URL is not set in venv")
+# database_url = os.getenv("DATABASE_URL")
+# if not database_url:
+#     raise ValueError("DATABASE_URL is not set in venv")
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:
@@ -27,7 +30,7 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = [Base.metadata, BasePost.metadata]
+target_metadata = [Base.metadata]
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

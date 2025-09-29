@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 
 from sqlalchemy.orm import relationship,declarative_base
-Base = declarative_base()
+from models.user import User, Base
 
 class UserFollower(Base):
     __tablename__ = "user_followers"

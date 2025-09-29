@@ -1,9 +1,8 @@
 from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey,Text
 from sqlalchemy.orm import relationship,declarative_base
 
-from models.user import User
+from models.user import User, Base
 
-Base = declarative_base()
 
 class Post(Base):
     __tablename__ = 'post'
